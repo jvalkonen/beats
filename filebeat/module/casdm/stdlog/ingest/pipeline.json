@@ -15,7 +15,11 @@
         "FILENAME": "(?:[A-Za-z0-9_. -]+)"
 			},
       "ignore_missing": true
-		}
+		},
+    "date": {
+      "field": "casdm.stdlog.timestamp",
+      "formats": ["MM/dd HH:mm:ss.SSS"]
+    }
 	}
   ],
   "on_failure" : [{
