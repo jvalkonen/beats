@@ -5,7 +5,7 @@
 		"grok": {
 			"field": "message",
 			"patterns": [
-				"%{TIMESTAMP:casdm.stdlog.timestamp}%{SPACE}%{HOSTNAME:casdm.stdlog.hostname}%{SPACE}%{PROCESS:casdm.stdlog.process.name}%{SPACE}%{PID:casdm.stdlog.process.id}%{SPACE}%{LOGLEVEL:casdm.stdlog.level}%{SPACE}%{FILENAME:casdm.stdlog.source_file.name}%{SPACE}%{POSINT:casdm.stdlog.source_file.line}%{SPACE}%{DATA:casdm.stdlog.message}"
+				"%{TIMESTAMP:casdm.stdlog.timestamp}%{SPACE}%{HOSTNAME:casdm.stdlog.node_name}%{SPACE}%{PROCESS:casdm.stdlog.process.name}%{SPACE}%{PID:casdm.stdlog.process.id}%{SPACE}%{LOGLEVEL:casdm.stdlog.level}%{SPACE}%{FILENAME:casdm.stdlog.source_file.name}%{SPACE}%{POSINT:casdm.stdlog.source_file.line}%{SPACE}%{DATA:casdm.stdlog.message}"
 			],
 			"pattern_definitions": {
 				"TIMESTAMP": "%{MONTHNUM2}/%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND}",
