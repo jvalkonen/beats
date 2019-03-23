@@ -1,0 +1,45 @@
+- name: stdlog
+  description: stdlogs are the core set of logs in a CA Service Desk Manager installation
+  example: 06/27 16:51:00.84 bg             sqlbuild             1324 SIGNIFICANT  sqlbuild.c             672 STARTUP of SQL Server build. Database: mdb
+  type: group
+  fields:
+  - name: timestamp
+    description: Extracted timestamp as a string
+    example: 06/27 16:51:00.84
+    type: text
+  - name: node_name
+    description: Name of the CA SDM node
+    example: bg
+    type: text
+  - name: process
+    description: CA SDM process related information
+    type: group
+    fields:
+    - name: name
+      description: Process name
+      type: text
+      example: sqlbuild
+    - name: id
+      description: Process id
+      type: long
+      example: 1324
+  - name: level
+    description: Log message level
+    example: SIGNIFICANT
+    type: text
+  - name: source_file
+    description: Log message's sender information
+    type: group
+    fields:
+    - name: name
+      description: Name of the (possibly compiled) file that sent the log message
+      type: text
+      example: sqlbuild.c
+    - name: line
+      description: Line number on the log message's sender file
+      example: 672
+      type: long
+  - name: message
+    description: The actual log message, as is. This can be further refined in filters.
+    example: STARTUP of SQL Server build. Database: mdb
+    type: text
