@@ -1,0 +1,3 @@
+dashboards:
+- id: Filebeat-casdm-stdlog-Dashboard
+  file: Filebeat-casdm-stdlog.json

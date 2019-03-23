@@ -1,0 +1,9 @@
+- key: casdm
+  title: "CA Service Desk Manager"
+  description: >
+    Module for handling CA Service Desk Manager's various logs. Individual filesets handle the different log types.
+  fields:
+    - name: casdm
+      type: group
+      description: >
+      fields:

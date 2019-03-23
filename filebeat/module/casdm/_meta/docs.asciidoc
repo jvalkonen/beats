@@ -1,0 +1,48 @@
+:modulename: casdm
+:has-dashboards: false
+
+== casdm module
+
+This is the CA Service Desk Manager module.
+
+include::../include/what-happens.asciidoc[]
+
+[float]
+=== Compatibility
+
+The stdlog format has stayed the same for ages so that should be compatible with all versions since r11.
+Some filesets are not applicable for older versions, like for example the REST API Tomcat log fileset for pre-r12 versions, but they do not break the functionality of this module.
+
+
+include::../include/running-modules.asciidoc[]
+
+[float]
+=== Example dashboard
+
+This module comes with a sample dashboard. For example:
+
+TODO: include an image of a sample dashboard. If you do not include a dashboard,
+remove this section and set `:has-dashboards: false` at the top of this file.
+
+include::../include/configuring-intro.asciidoc[]
+
+TODO: provide an example configuration
+
+:fileset_ex: {fileset}
+
+include::../include/config-option-intro.asciidoc[]
+
+TODO: document the variables from each fileset. If you're describing a variable
+that's common to other modules, you can reuse shared descriptions by including
+the relevant file. For example:
+
+[float]
+==== `{fileset}` log fileset settings
+
+include::../include/var-paths.asciidoc[]
+
+:has-dashboards!:
+
+:fileset_ex!:
+
+:modulename!:
