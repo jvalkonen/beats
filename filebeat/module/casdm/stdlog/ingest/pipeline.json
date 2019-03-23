@@ -1,11 +1,11 @@
 {
-  "description": "Pipeline for parsing casdm stdlog logs",
+  "description": "Pipeline for parsing CA Service Desk Manager stdlogs",
   "processors": [
 	{
 		"grok": {
 			"field": "message",
 			"patterns": [
-				"%{TIMESTAMP:casdm.stdlog.timestamp}%{SPACE}%{HOSTNAME:casdm.stdlog.hostname}%{SPACE}%{PROCESS:casdm.stdlog.process.name}%{SPACE}%{PID:casdm.stdlog.process.id}%{SPACE}%{LOGLEVEL:casdm.stdlog.level}%{SPACE}%{FILENAME:casdm.stdlog.file.name}%{SPACE}%{POSINT:casdm.stdlog.file.line}%{SPACE}%{DATA:casdm.stdlog.message}"
+				"%{TIMESTAMP:casdm.stdlog.timestamp}%{SPACE}%{HOSTNAME:casdm.stdlog.hostname}%{SPACE}%{PROCESS:casdm.stdlog.process.name}%{SPACE}%{PID:casdm.stdlog.process.id}%{SPACE}%{LOGLEVEL:casdm.stdlog.level}%{SPACE}%{FILENAME:casdm.stdlog.source_file.name}%{SPACE}%{POSINT:casdm.stdlog.source_file.line}%{SPACE}%{DATA:casdm.stdlog.message}"
 			],
 			"pattern_definitions": {
 				"TIMESTAMP": "%{MONTHNUM2}/%{MONTHDAY} %{HOUR}:%{MINUTE}:%{SECOND}",
@@ -13,7 +13,8 @@
         "PID": "%{POSINT}",
         "LOGLEVEL": "(FATAL|EXIT|SIGNIFICANT|SEVERE_ERROR|ERROR|WARNING|INFORMATION|MILESTONE|TRACE|VERBOSE)",
         "FILENAME": "(?:[A-Za-z0-9_. -]+)"
-			}
+			},
+      "ignore_missing": true
 		}
 	}
   ],
