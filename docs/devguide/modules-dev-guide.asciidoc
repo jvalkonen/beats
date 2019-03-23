@@ -448,7 +448,7 @@ should contain the fields defined at the module level, and the description of
 the module itself. In most cases, you should add the fields at the fileset
 level.
 
-After `pipeline.json` is created, it is possible to generate a base `field.yml`.
+After `pipeline.json` is created, it is possible to generate a base `fields.yml`.
 
 [source,bash]
 ----
