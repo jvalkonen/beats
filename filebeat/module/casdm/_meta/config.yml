@@ -1,6 +1,6 @@
 - module: casdm
-  # All logs
-  {fileset}:
+  # stdlog logs, the base logs for all CA SDM
+  stdlog:
     enabled: true
 
     # Set custom paths for the log files. If left empty,
