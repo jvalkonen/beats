@@ -30,6 +30,7 @@ import (
 	_ "github.com/elastic/beats/filebeat/input/udp"
 	_ "github.com/elastic/beats/filebeat/module/apache"
 	_ "github.com/elastic/beats/filebeat/module/auditd"
+	_ "github.com/elastic/beats/filebeat/module/casdm"
 	_ "github.com/elastic/beats/filebeat/module/elasticsearch"
 	_ "github.com/elastic/beats/filebeat/module/haproxy"
 	_ "github.com/elastic/beats/filebeat/module/icinga"

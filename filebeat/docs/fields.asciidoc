@@ -15,6 +15,7 @@ grouped in the following categories:
 * <<exported-fields-apache>>
 * <<exported-fields-auditd>>
 * <<exported-fields-beat>>
+* <<exported-fields-casdm>>
 * <<exported-fields-cloud>>
 * <<exported-fields-docker-processor>>
 * <<exported-fields-ecs>>
@@ -1047,6 +1048,125 @@ alias to: agent.hostname
 
 --
 
+[[exported-fields-casdm]]
+== CA Service Desk Manager fields
+
+Module for handling CA Service Desk Manager's various logs. Individual filesets handle the different log types.
+
+
+
+[float]
+== casdm fields
+
+
+
+
+[float]
+== stdlog fields
+
+stdlogs are the core set of logs in a CA Service Desk Manager installation
+
+
+*`casdm.stdlog.timestamp`*::
++
+--
+type: text
+
+example: 06/27 16:51:00.84
+
+Extracted timestamp as a string
+
+--
+
+*`casdm.stdlog.node_name`*::
++
+--
+type: text
+
+example: bg
+
+Name of the CA SDM node
+
+--
+
+[float]
+== process fields
+
+CA SDM process related information
+
+
+*`casdm.stdlog.process.name`*::
++
+--
+type: text
+
+example: sqlbuild
+
+Process name
+
+--
+
+*`casdm.stdlog.process.id`*::
++
+--
+type: long
+
+example: 1324
+
+Process id
+
+--
+
+*`casdm.stdlog.level`*::
++
+--
+type: text
+
+example: SIGNIFICANT
+
+Log message level
+
+--
+
+[float]
+== source_file fields
+
+Log message's sender information
+
+
+*`casdm.stdlog.source_file.name`*::
++
+--
+type: text
+
+example: sqlbuild.c
+
+Name of the (possibly compiled) file that sent the log message
+
+--
+
+*`casdm.stdlog.source_file.line`*::
++
+--
+type: long
+
+example: 672
+
+Line number on the log message's sender file
+
+--
+
+*`casdm.stdlog.message`*::
++
+--
+type: text
+
+example: STARTUP of SQL Server build. Database: mdb
+
+The actual log message, as is. This can be further refined in filters.
+
+--
+
 [[exported-fields-cloud]]
 == Cloud provider metadata fields
 
@@ -1199,7 +1319,7 @@ Required field for all events.
 --
 type: object
 
-example: {'application': 'foo-bar', 'env': 'production'}
+example: {'env': 'production', 'application': 'foo-bar'}
 
 Custom key/value pairs.
 Can be used to add meta information to events. Should not contain nested objects. All values are stored as keyword.

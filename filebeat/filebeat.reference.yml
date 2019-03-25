@@ -82,6 +82,16 @@ filebeat.modules:
     # can be added under this section.
     #input:
 
+#----------------------- CA Service Desk Manager Module -----------------------
+- module: casdm
+  # stdlog logs, the base logs for all CA SDM
+  stdlog:
+    enabled: true
+
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
 #---------------------------- Elasticsearch Module ----------------------------
 - module: elasticsearch
   # Server log
